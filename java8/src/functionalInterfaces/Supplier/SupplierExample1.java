@@ -11,6 +11,9 @@ public class SupplierExample1 {
             return new Student("Aadi", 9, 92,"Male", Arrays.asList("swimming", "cricket", "bowling"), 11);
         };
 
+        Supplier<String> myS = () -> {return "ashvani";};
+
         System.out.println(studentSupplier.get());
+        System.out.println(myS.get());
     }
 }

@@ -31,11 +31,10 @@ public class ConsumerExample2 {
     }
 
     public static void studentsWithGradeGreaterThanTwo() {
-        Students.getAllStudents().forEach(
+        Students.getAllStudents()
+                .forEach(               //in actual forEach takes each element from list/stream and do operation on each
                 student -> {
-                    if(Integer.valueOf(student.getGradeLevel()) > 2) {
-                        //as consumer was written for Student and here on this forEach loop we are iterating over all
-                        //students also foreach accepts consumer, so we can pass it will conditions as well, like grade>2
+                    if(student.getGradeLevel() > 2) {
                         consumer.andThen(consumer2).accept(student);
                     }
                 }
@@ -47,8 +46,6 @@ public class ConsumerExample2 {
         //printStudentsName();
         //printStudentNamesWithActivities();
         studentsWithGradeGreaterThanTwo();
-
-
     }
 }
 //anThen is used for consumer chaining

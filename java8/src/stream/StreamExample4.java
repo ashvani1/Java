@@ -21,7 +21,7 @@ public class StreamExample4 {
     }
 
     static Optional<Integer> performMultiplicationWithOutInitialValue(List<Integer> number) {
-        //we don't need initial value here, it will multiply all elements are return
+        //we don't need initial value here, it will multiply all elements are return.. returns Optional<T>
         return number.stream().reduce((a, b) -> a*b);
     }
 

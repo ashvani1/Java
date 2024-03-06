@@ -17,8 +17,8 @@ public class StreamExample12 {
      static Optional<Student> minBy() {
          return studentList.stream()
                          .filter(student -> student.getName().startsWith("a"))
-                 //collect(Collectors.minBy(Comparator.comparing(Student::getGpa)));
-                 .min(Comparator.comparing(Student::getGpa));
+                 //collect(Collectors.minBy(Comparator.comparing(Student::getGpa)));   //comparing is from Collectors
+                 .min(Comparator.comparing(Student::getGpa));                          //min is from ReferencePipeline
     }
     public static void main(String[] args) {
          minBy().stream().forEach(System.out::println);

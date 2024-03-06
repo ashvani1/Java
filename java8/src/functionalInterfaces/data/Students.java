@@ -19,7 +19,7 @@ public class Students {
         Student student6 = new Student("mani", 10, 11,"Male", Arrays.asList("swimming", "cricket", "football", ""), 10);
         Student student7 = new Student("ranjit", 10, 90,"Male", Arrays.asList("swimming", "cricket", "baseball"), 12);
 
-        students = Arrays.asList(student1, student2, student3, student4, student5, student6, student7, student8, student9, student10, student11, student12, student13, null);
+        students = Arrays.asList(student1, student2, student3, student4, student5, student6, student7, student8, student9, student10, student11, student12, student13);
         return students;
     }
 

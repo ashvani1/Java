@@ -10,15 +10,16 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class PredicateWithConsumerExample3 {
-    Predicate<Student> topGrades = (student) -> student.getGradeLevel() > 5;
-    Predicate<Student> goodGPA = (student) -> student.getGpa() > 60;
-    BiPredicate<Integer, Double> topGradeWithGodGPA = (grade, gpa) -> grade > 5 && gpa > 60;
-    BiConsumer<Student, List<String>> biConsumer = ((student, activities) ->
+    static Predicate<Student> topGrades = (student) -> student.getGradeLevel() > 5;
+    static Predicate<Student> goodGPA = (student) -> student.getGpa() > 60;
+    static BiPredicate<Integer, Double> topGradeWithGodGPA = (grade, gpa) -> grade > 5 && gpa > 60;
+    static BiConsumer<Student, List<String>> biConsumer = ((student, activities) ->
             System.out.println("student : " +student + " activities :" + activities));
 
-    void printStudentNamesWithActivities(List<Student> studentList) {
+    static void printStudentNamesWithActivities(List<Student> studentList) {
+
+        //consumer doesn't return anything, here it will just apply the given conditions to the input
         Consumer<Student> consumer = (student) -> {
-            //if looks for boolean expression so it can take Predicates
             if(topGrades.and(goodGPA).test(student)) {
                 biConsumer.accept(student, student.getActivities());
 
@@ -40,7 +41,7 @@ public class PredicateWithConsumerExample3 {
         );
     }
     public static void main(String[] args) {
-        new PredicateWithConsumerExample3().printStudentNamesWithActivities(Students.getAllStudents());
+        printStudentNamesWithActivities(Students.getAllStudents());
 
     }
 }

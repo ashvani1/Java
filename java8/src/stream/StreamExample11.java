@@ -19,6 +19,11 @@ public class StreamExample11 {
 
     public static void main(String[] args) {
         System.out.println(studentNameStartWithACount());
+        System.out.println(studentList.stream(). filter(student -> student.getName().startsWith("aa")).count());
+
+
+        //count() is from ReferencePipeline
+        //counting() is from Collections
 
     }
 }

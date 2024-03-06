@@ -8,4 +8,6 @@ public class Introduction {
     //Predicate<T> or(Predicate<? super T> other) : logical OR
     //default Predicate<T> negate() : reverse the predicate
 
+    //as Predicate gives a boolean result, we can pass it to the places where we need boolean result like
+    //  if(predicate.get(object)), filter(predicate)
 }

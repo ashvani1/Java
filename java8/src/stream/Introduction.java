@@ -37,10 +37,8 @@ public class Introduction {
     * findFirst() => return first element [return as Optional]
     * findAny()   => return first encountered element in the stream [return as Optional]
     * of()        => create a stream based on values passed to this method
-    * iterate()   => to create infinite stream
-    * generate()  => to create infinite stream
-    * summingInt() => return sum as a result, it takes a
-    * averagingInt() => return average as a result
+    * iterate(seed, unary) => to create infinite stream
+    * generate(supplier)  => to create infinite stream
     *
     * */
 
@@ -59,7 +57,7 @@ public class Introduction {
     * joining() => can be used under collect as collect(Collectors.joining()). will join and collect each data came from stream
     * counting()=> total number pf elements as collect(Collectors.counting())
     * mapping() => applies a transformation function first and then collects
-    * groupingBy() => return result based on property and it returns Map<K, V>.
+    * groupingBy() => return result based on property, and it returns Map<K, V>.
                     groupingBy(classifier)
                     groupingBy(classifier, downStream)
                     groupingBy(classifier, supplier, downStream)
@@ -71,7 +69,7 @@ public class Introduction {
     * */
 
 
-    //collect methods
+    //collectors class's methods
     /*
     * joining()  =>
     * counting() =>

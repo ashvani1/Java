@@ -5,6 +5,7 @@ import functionalInterfaces.data.Students;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class MethodReferenceExample1 {
     public static void main(String[] args) {
@@ -14,7 +15,7 @@ public class MethodReferenceExample1 {
 
         Consumer<Student> consumer = System.out :: println;
         Students.getAllStudents().forEach(consumer);
-
+        Function<Student, Double> stdGPA = Student::getGpa;
     }
 }
 

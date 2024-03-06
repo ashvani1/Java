@@ -84,19 +84,5 @@ public class Student {
     public void setActivities(List<String> activities) {
         this.activities = activities;
     }
-
-    /*
-Comparator.comparing(Student::getGradeLevel): This sorts students based on their gradeLevel in ascending order.
-thenComparingDouble(Student::getGpa): If two students have the same gradeLevel, this then compares them based on their GPA in ascending order.
-thenComparing(Student::getName): If both gradeLevel and GPA are the same, it compares students based on their name in lexicographical order (alphabetical order).
-thenComparingInt(student -> student.getActivities().size()): If all previous criteria are the same, it compares students based on the number of activities they have in ascending order.
-.reversed(): Finally, the entire comparator is reversed, meaning the list will be sorted in descending order based on the specified criteria.*/
-
-    public static Comparator<Student> studentComparator = Comparator
-            .comparing(Student::getGradeLevel)
-            .thenComparingDouble(Student::getGpa)
-            .thenComparing(Student::getName)
-            .thenComparingInt(student -> student.getActivities().size())
-            .reversed();
 }
 

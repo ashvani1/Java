@@ -14,7 +14,7 @@ public class RunnableExample {
 
 
         //After Java8
-        //Here notice that, runnable1 itself hold the implementation of single method that Runnable holds
+        //Here notice that, runnable1 itself hold the implementation of single method that Runnable has [run()]
         Runnable runnable1 = () ->
             System.out.println("this is new way to implement runnable");
         new Thread(runnable1).start();

@@ -22,5 +22,6 @@ public class StreamExample13 {
         System.out.println(sum());
         System.out.println(average());
 
+
     }
 }
