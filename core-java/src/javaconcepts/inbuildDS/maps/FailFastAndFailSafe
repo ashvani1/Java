@@ -1,0 +1,29 @@
+Fail-Fast Iterator:
+In Fail-Fast iterators, if the underlying collection is structurally modified while iterating, it throws a
+ConcurrentModificationException. Fail-Fast iterators work directly on the original collection without making a copy.
+
+Fail-Safe Iterator:
+Fail-Safe iterators work on a copy of the collection, ensuring that modifications to the underlying collection do not
+cause ConcurrentModificationException.
+In the Fail-Fast example, modifying the map by removing an entry while iterating over it leads to a ConcurrentModificationException.
+
+In the Fail-Safe example, modifications to the ConcurrentHashMap during iteration do not throw any exceptions. The iterator
+ works on a separate copy of the keys, allowing concurrent modifications without interference.
+
+Fail-Fast Collections and Maps:
+ArrayList
+LinkedList
+HashSet
+TreeSet
+HashMap
+TreeMap
+
+
+Fail-Safe Collections and Maps:
+ConcurrentHashMap
+CopyOnWriteArrayList
+CopyOnWriteArraySet
+ConcurrentSkipListMap
+ConcurrentSkipListSet
+ConcurrentLinkedQueue
+ConcurrentLinkedDeque

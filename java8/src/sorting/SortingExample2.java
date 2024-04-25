@@ -1,4 +1,4 @@
-package functionalInterfaces.methods;
+package sorting;
 
 import functionalInterfaces.data.Student;
 import functionalInterfaces.data.Students;
@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class InterfaceMethodsExample2 {
+public class SortingExample2 {
 
     static Consumer<Student> studentConsumer = student -> System.out.println(student);
     //create functionality and assign to a variable

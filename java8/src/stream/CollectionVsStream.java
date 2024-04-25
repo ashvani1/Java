@@ -13,7 +13,7 @@ public class CollectionVsStream {
 
         names.remove(0);
         names.remove("ash");
-        System.out.println(names);
+        //System.out.println(names);
 
 
         ArrayList<Integer> integers = new ArrayList<>();
@@ -25,9 +25,10 @@ public class CollectionVsStream {
 
         integers.remove(0);
         integers.remove(Integer.valueOf(400));
-        System.out.println(integers);
+        //System.out.println(integers);
 
         Stream<Integer> integerStream = integers.stream();
+        integerStream.filter(a -> a%2 == 0).map(a -> a*10).forEach(System.out::println);
         //once stream prepared, we cant delete anything from it
     }
 }

@@ -1,11 +1,10 @@
-package constructorAndMethodReferences;
+package methodReferences;
 
 import functionalInterfaces.data.Student;
 import functionalInterfaces.data.Students;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class MethodReferenceExample1 {
     public static void main(String[] args) {

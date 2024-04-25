@@ -9,10 +9,10 @@ public class Introduction {
     * ofNullable()          => return Optional.empty() for null
     * empty()               => give empty object as result
     * orElse()              => can get a default value like a "String"
-    * orElseGet(Supplier)   => can get any value for, example if not data from Option create an object by supplier and get
-    * orElseThrow(Supplier) => can get any Exception, for example if not data from Option create an object by supplier and get
-    * ifPresent()           => return true when Optional has data
-    * isPresent()           => take a Consumer and execute it only once Optional has data
+    * orElseGet(Supplier)   => can get any value, for example if no data from Option, create an object by supplier and get
+    * orElseThrow(Supplier) => can get any Exception, for example if no data from Option create an object by supplier and get
+    * isPresent()           => return true when Optional has data
+    * ifPresent()           => take a Consumer and execute it only once Optional has data
     * map()                 => similar to collection
     * flatMap()             => similar to collection
     * filter()              => If we want to get Optional object inside another Optional object then we use flatMap

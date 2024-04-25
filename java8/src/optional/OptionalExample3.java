@@ -16,6 +16,8 @@ public class OptionalExample3 {
         optional.ifPresent(a -> System.out.println(a));   //print Hello
         optional1.ifPresent(a -> System.out.println(a));  // dont print anything as optional1 doesn't have anything
 
+        System.out.println(optional.isPresent());
+
 
     }
 }

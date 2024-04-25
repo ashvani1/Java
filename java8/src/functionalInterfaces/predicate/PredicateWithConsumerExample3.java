@@ -32,13 +32,13 @@ public class PredicateWithConsumerExample3 {
         studentList.stream().forEach(consumer);
 
         //BiPredicate
-        studentList.forEach(
-                student -> {
-                    if(topGradeWithGodGPA.test(student.getGradeLevel(), student.getGpa())) {
-                        biConsumer.accept(student, student.getActivities());
-                    }
-                }
-        );
+//        studentList.forEach(
+//                student -> {
+//                    if(topGradeWithGodGPA.test(student.getGradeLevel(), student.getGpa())) {
+//                        biConsumer.accept(student, student.getActivities());
+//                    }
+//                }
+//        );
     }
     public static void main(String[] args) {
         printStudentNamesWithActivities(Students.getAllStudents());

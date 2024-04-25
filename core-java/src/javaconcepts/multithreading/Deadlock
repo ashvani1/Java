@@ -1,0 +1,24 @@
+
+Deadlock in Java occurs when two or more threads are blocked forever, waiting for each other to release resources that they
+need to proceed. This situation typically arises when multiple threads acquire locks on different resources and then attempt
+to acquire locks on additional resources held by other threads, resulting in a cyclic waiting scenario.
+
+To resolve deadlock, you can follow these approaches:
+
+Prevention:
+Avoid acquiring multiple locks if possible.
+Acquire locks in a fixed, predefined order to prevent cyclic dependencies.
+
+Detection:
+Use tools like thread dump analysis and monitoring tools to detect deadlocks in real-time.
+
+Avoidance:
+Use tryLock() method with a timeout to avoid waiting indefinitely for a lock.
+Use Lock objects from the java.util.concurrent package, which offer more flexibility and control over locking.
+
+Resolution:
+If deadlock is detected, forcibly release one or more locks to break the deadlock. This approach should be used with caution
+as it can lead to data corruption.
+It's essential to design your multithreaded applications carefully to avoid deadlock situations, as they can be challenging
+to diagnose and resolve. Proper synchronization, lock ordering, and deadlock prevention strategies are crucial for robust concurrent
+programming in Java.

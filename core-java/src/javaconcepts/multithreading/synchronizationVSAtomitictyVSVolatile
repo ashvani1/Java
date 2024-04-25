@@ -1,0 +1,79 @@
+Synchronized:
+
+synchronized keyword is used to provide exclusive access to a shared resource or critical section of code among multiple threads.
+It ensures that only one thread can execute the synchronized block or method at a time, preventing concurrent access and
+maintaining data consistency.
+It can be applied at the method level (synchronized methods) or block level (synchronized blocks).
+Use synchronized when you need to ensure thread safety by preventing concurrent access to shared resources, especially in
+scenarios where multiple threads may read and write to the same data simultaneously.
+
+
+public class SynchronizedExample {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+}
+
+
+
+Atomicity:
+
+Atomicity refers to the property of an operation where it appears to execute in a single, indivisible step, without interruption
+or interference from other threads.
+In Java, atomic operations are typically achieved using classes from the java.util.concurrent.atomic package, such as AtomicInteger,
+AtomicBoolean, etc.
+These classes provide atomic versions of common operations like increment, decrement, compare-and-set, etc., ensuring that these
+operations execute atomically without the need for explicit synchronization.
+Use atomic operations when you need to perform simple operations atomically without the overhead of synchronization, especially in
+high-concurrency scenarios.
+
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class AtomicityExample {
+    private AtomicInteger count = new AtomicInteger(0);
+
+    public int incrementAndGet() {
+        return count.incrementAndGet();
+    }
+}
+
+
+
+Volatile:
+volatile keyword is used to indicate that a variable's value may be modified by multiple threads asynchronously.
+It ensures visibility of changes to the variable across threads, meaning that changes made by one thread are immediately
+visible to other threads.
+Unlike synchronized, volatile does not provide mutual exclusion or atomicity; it only ensures visibility.
+Use volatile when you need to ensure that changes made to a variable by one thread are immediately visible to other threads,
+especially for flags or status variables.
+
+public class VolatileExample {
+    private volatile boolean flag;
+
+    public void setFlag(boolean value) {
+        this.flag = value;
+    }
+
+    public boolean isFlag() {
+        return flag;
+    }
+}
+
+
+
+Relationships and Differences:
+
+synchronized and atomic operations (Atomic classes) both ensure atomicity, but they achieve it through different mechanisms.
+synchronized uses locks to provide mutual exclusion, while atomic operations use compare-and-swap (CAS) operations for atomicity
+without locking.
+volatile ensures visibility of changes to a variable across threads but does not provide atomicity or mutual exclusion.
+All three concepts are related in that they address different aspects of concurrent programming: synchronized ensures mutual
+exclusion, atomicity ensures indivisibility of operations, and volatile ensures visibility of changes.
+The choice of which to use depends on the specific requirements of your application:
+Use synchronized when you need mutual exclusion and synchronization between threads.
+Use atomic operations (Atomic classes) when you need atomicity for simple operations without the overhead of synchronization.
+Use volatile when you need visibility of changes to a variable across threads without synchronization, especially for simple
+flags or status variables.

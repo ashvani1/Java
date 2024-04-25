@@ -1,11 +1,11 @@
-package functionalInterfaces.methods;
+package sorting;
 
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class InterfaceMethodsExample1 {
+public class SortingExample1 {
     public static void main(String[] args) {
         //sort the list the name in alphabetical order
 
@@ -18,5 +18,10 @@ public class InterfaceMethodsExample1 {
         //after Java8 => List interface has a default sort() method... [takes a comparator]
         stringList.sort(Comparator.reverseOrder());
         System.out.println(stringList);
+
+        //for primitive data
+        int[] a = {2,1,3,5,3,5,10,7,5,3,1,0};
+        Arrays.sort(a);
+        Arrays.stream(a).forEach(System.out::print);
     }
 }

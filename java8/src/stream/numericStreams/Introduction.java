@@ -21,6 +21,9 @@ public class Introduction {
     * min()      => min from all stream elements
     * average()  => average of all stream elements
     * boxed()    => converting primitive to Wrapper class
-    * mapToInt() => this is applicable on a Integer Stream to convert it to intStream like stream.mapToInt(Integer::intValue);
+    * mapToInt() =>
+            this is applicable on a Integer Stream to convert it to intStream like stream.mapToInt(Integer::intValue);
+            another use case can be when we need to do some calculation like find sum of all notebooks that student having
+            here, we can use mapToInt(Student::getNoteBooks)
     */
 }

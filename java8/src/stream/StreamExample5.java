@@ -18,7 +18,7 @@ public class StreamExample5 {
 
     static int numberOfNoteBooksFromGrade10() {
         return studentList.stream()
-                .filter(student -> student.getGradeLevel() > 10)
+                .filter(student -> student.getGradeLevel() == 10)
                 .map(Student::getNoteBooks)
                 .reduce(0, Integer::sum);
     }

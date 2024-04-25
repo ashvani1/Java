@@ -1,0 +1,38 @@
+
+If we need custom class as key for sorted collections like TreeMap. Suppose we want to make Student as a key
+we have 2 ways
+
+1. Comparable: Student implements Comparable and override compareTo()
+class Student implements Comparable<Student> {
+
+ @Override
+    public int compareTo(Student other) {
+        return Integer.compare(this.id, other.id);
+    }
+ }
+
+ we can use it directly now as
+  TreeMap<Student, String> treeMap = new TreeMap<>();
+   treeMap.put(new Student("Alice", 101), "Grade A");
+
+
+ 2. Comparator: Other way where Student doesn't implement Comparable, we can put values in map as below
+
+ public static void main(String[] args) {
+         // Creating a TreeMap with a custom Comparator
+         TreeMap<Student, String> treeMap = new TreeMap<>(Comparator.comparingInt(Student::getId));
+
+         // Adding elements to the TreeMap
+         treeMap.put(new Student("Alice", 101), "Grade A");
+         }
+
+
+ =======================
+ Collections.sort(any collection like List);
+
+ for custom classes which implements Comparator, ex NewCountry implements Comparator<NewCountry>
+ sort list of countries based on comparator
+ Collections.sort(countryList, new NewCountry());
+
+ =======================
+

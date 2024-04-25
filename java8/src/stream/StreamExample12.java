@@ -3,6 +3,7 @@ package stream;
 import functionalInterfaces.data.Student;
 import functionalInterfaces.data.Students;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -22,6 +23,8 @@ public class StreamExample12 {
     }
     public static void main(String[] args) {
          minBy().stream().forEach(System.out::println);
+        Optional<Integer> minimum = Arrays.asList(10,2,3,5,610, 32).stream().min(Integer :: compareTo);
+        minimum.ifPresent(System.out::println);
 
     }
 }

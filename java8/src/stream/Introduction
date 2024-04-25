@@ -1,25 +1,19 @@
-package stream;
+//Streams introduction
 
-public class Introduction {
-    //Streams introduction
-    /*
     * Stream is sequence of elements
     * Introduced in Java8 to perform operations on collections effectively.
     * Parallel operations on collections became easy with stream
     * until stream has a Terminal operation, non of the operation will start [no Intermediate operation will run without terminal operation]
-     */
 
-    //Difference between Collection and Stream
-    /*
+
+    Difference between Collection and Stream
     * In Collection we can add/modify elements at any point of time but this is not applicable on Stream
     * Elements of collection can be accessed in any order ex[using index], but stream elements can be accessed only in sequence.
     * Collection is eagerly constructed but Streams are lazily.
     * Collection can be traversed as many times as we want but streams can be traversed only once. we can create another
       stream from current stream for further operations
-    */
 
     //Stream API methods
-    /*
     * map()       => convert one type to another
     * flatMap()   => similar to map but used where each element of stream represent multiple elements
                      example: Stream<List>, Stream<Arrays> [activities of Student class]
@@ -39,16 +33,13 @@ public class Introduction {
     * of()        => create a stream based on values passed to this method
     * iterate(seed, unary) => to create infinite stream
     * generate(supplier)  => to create infinite stream
-    *
-    * */
 
-    /*Methods that adhere short circuiting*/
-    /*limit(), findFirst(), findAny(), anyMatch(), allMatch(), noneMatch()
+    Methods that adhere short circuiting
+    limit(), findFirst(), findAny(), anyMatch(), allMatch(), noneMatch()
     All these functions doesn't have to iterate the whole stream to evaluate the result.
-     */
 
-    //Terminal Operations : operation that collects the data
-    /*
+
+    Terminal Operations : operation that collects the data
     * forEach() =>
     * min()     =>
     * max()     =>
@@ -66,18 +57,12 @@ public class Introduction {
                           partitioningBy(predicate, downStream)
 
 
-    * */
-
 
     //collectors class's methods
-    /*
     * joining()  =>
     * counting() =>
     * minBy()    =>
     * maxBy()    =>
     * summingInt()  =>
     * averagingImt() =>
-    * */
 
-
-}

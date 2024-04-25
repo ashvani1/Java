@@ -12,10 +12,11 @@ public class OptionalExample2 {
     public static String optionalOrElse() {
         Optional<Student> studentOptional
                 = Optional.ofNullable(Students.studentSupplier.get());
-        String name
-                = studentOptional.map(Student::getName)
+
+        String name =
+                studentOptional.map(Student::getName)
                 .filter(student ->student.startsWith("a"))
-                .orElse("Default");
+                .orElse("Default");                   //doesn't need a supplier
         return name;
     }
 

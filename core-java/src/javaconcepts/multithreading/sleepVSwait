@@ -1,0 +1,29 @@
+In Java, both wait() and sleep() are methods related to thread management, but they serve different purposes and have
+different behaviors:
+
+wait(): This method is defined in the Object class and is used for inter-thread communication. When a thread calls wait()
+on an object, it temporarily releases the lock it holds on that object and enters the waiting state. It remains in the waiting
+state until another thread notifies it by calling the notify() or notifyAll() method on the same object. The wait() method
+must be called from within a synchronized block, as it releases the lock on the object.
+
+Example:
+synchronized (sharedObject) {
+    while (conditionIsNotMet) {
+        sharedObject.wait(); // Release lock and wait for notification
+    }
+}
+
+
+sleep(): This method is defined in the Thread class and is used to pause the execution of the current thread for a specified
+amount of time. Unlike wait(), sleep() does not release any locks, and the thread remains in the same state (runnable) but is
+not scheduled to run by the scheduler for the specified duration.
+
+
+Example:
+try {
+    Thread.sleep(1000); // Sleep for 1 second
+} catch (InterruptedException e) {
+    // Handle interrupted exception
+}
+In summary, wait() is used for inter-thread communication and requires synchronization, while sleep() is used for pausing
+the execution of the current thread and does not require synchronization.

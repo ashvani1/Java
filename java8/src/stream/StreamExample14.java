@@ -22,9 +22,18 @@ public class StreamExample14 {
         return studentList.stream().collect(Collectors.groupingBy(student -> student.getGpa() > 3 ? "OUTSTANDING":"AVERAGE"));
     }
     public static void main(String[] args) {
-        for(Map.Entry entry : customizedStudentGroupingByGPA().entrySet()) {
+        /*for(Map.Entry entry : customizedStudentGroupingByGPA().entrySet()) {
             System.out.println(entry.getKey() + " :: " + entry.getValue());
-        }
+        }*/
+
+
+
+        //sum of notebook against each student
+
+        System.out.println(studentList.stream().collect(Collectors.groupingBy(student -> student.getName(),
+                Collectors.summingInt(student -> student.getNoteBooks()))));
+
+
 
     }
 }

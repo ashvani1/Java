@@ -1,0 +1,56 @@
+========
+A BlockingQueue in Java is a type of queue that supports blocking operations. It means that when you try to retrieve an
+element from an empty queue, or add an element to a full queue, the operation will block until it becomes possible to
+complete it.
+
+Here's a simple explanation along with an example:
+
+=========
+PriorityBlockingQueue is a concurrent implementation of the BlockingQueue interface in Java.
+It is similar to PriorityQueue but is thread-safe, making it suitable for concurrent environments where multiple threads
+may access and modify the queue simultaneously.
+
+Here's an explanation of PriorityBlockingQueue along with an example:
+
+Priority Ordering:
+Like PriorityQueue, PriorityBlockingQueue orders elements according to their natural order or by a specified comparator.
+The head of the queue will always be the least element with respect to the specified ordering.
+
+Blocking Operations:
+put(E e): Inserts the specified element into this queue if it is possible to do so immediately without violating capacity
+restrictions. If the queue is full, it will wait until space becomes available.
+take(): Retrieves and removes the head of this queue, waiting if necessary until an element becomes available.
+=========
+
+
+The main differences between ArrayBlockingQueue and PriorityBlockingQueue lie in their underlying data structures and the
+order in which elements are retrieved from the queue:
+
+Underlying Data Structure:
+ArrayBlockingQueue: Uses an array to store elements internally. It has a fixed capacity that is set when the queue is created.
+Once the queue is full, attempts to add more elements will block until space becomes available.
+PriorityBlockingQueue: Internally implemented as a priority heap or priority queue. It does not have a fixed capacity and
+can dynamically resize itself to accommodate additional elements.
+
+
+Ordering of Elements:
+ArrayBlockingQueue: Follows the FIFO (First-In-First-Out) order, meaning that elements are retrieved from the queue in the
+same order in which they were inserted.
+PriorityBlockingQueue: Maintains elements based on their natural order or the order specified by a comparator. Elements are
+retrieved in priority order, where elements with the highest priority (according to the comparator) are dequeued first.
+
+
+Blocking Behavior:
+Both ArrayBlockingQueue and PriorityBlockingQueue are blocking queues, meaning that operations like put() (adding elements)
+and take() (retrieving elements) will block if necessary until space is available (for put()) or until an element becomes
+available (for take()).
+
+
+Use Cases:
+ArrayBlockingQueue: Typically used in scenarios where a fixed-size FIFO queue is needed, such as producer-consumer scenarios
+with a predefined capacity.
+PriorityBlockingQueue: Suitable for applications where elements need to be processed in priority order, such as task
+scheduling or event processing systems where the order of execution depends on the priority of tasks/events.
+In summary, ArrayBlockingQueue is a bounded FIFO queue with a fixed capacity, while PriorityBlockingQueue is an unbounded
+queue that maintains elements based on their priority. The choice between them depends on the specific requirements of your
+application regarding capacity, ordering, and prioritization of elements.

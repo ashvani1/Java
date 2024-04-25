@@ -4,6 +4,7 @@ import functionalInterfaces.data.Student;
 import functionalInterfaces.data.Students;
 
 import java.util.List;
+import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 public class StreamExample13 {
@@ -23,5 +24,10 @@ public class StreamExample13 {
         System.out.println(average());
 
 
+        int sumOfNoteBooks = studentList.stream().mapToInt(student -> student.getNoteBooks()).sum();
+        int sumOfNoteBooks1 = studentList.stream().mapToInt(Student::getNoteBooks).sum();
+        OptionalDouble averageOfNoteBooks = studentList.stream().mapToInt(student -> student.getNoteBooks()).average();
+        System.out.println(sumOfNoteBooks);
+        averageOfNoteBooks.ifPresent(System.out :: println);
     }
 }

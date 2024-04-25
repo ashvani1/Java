@@ -3,6 +3,7 @@ package stream;
 import functionalInterfaces.data.Student;
 import functionalInterfaces.data.Students;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,6 +35,6 @@ thenComparingInt(student -> student.getActivities().size()): If all previous cri
         //studentsSortedByName().forEach(System.out::println);
         //good example of sorting: must
         studentList.stream().sorted(studentComparator).forEach(System.out::println);
-
+        List<Student> students = studentList.stream().sorted(studentComparator).toList();
     }
 }

@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class StreamExample1 {
     static List<Student> students = Students.getAllStudents();
+
     public static void main(String[] args) {
         //Students name and activities in a map
         Map<String, List<String>> studentWithActivities = students.stream().collect(Collectors.toMap(Student::getName, Student::getActivities));
@@ -31,12 +32,12 @@ public class StreamExample1 {
 
         //System.out.println(studentsNameWithGradeGreaterThanFive);
 
-        //In dev, we can debug stream using peak() method which take a consumer
+        //In dev, we can debug stream using peek() method which take a consumer
         students.stream().peek(System.out::println)
-                .filter(student -> student.getGpa()>5)
-                .peek(student -> System.out.println("after first filter result is "+student))
+                .filter(student -> student.getGpa() > 5)
+                .peek(student -> System.out.println("after first filter result is " + student))
                 .filter(student -> student.getGradeLevel() > 10)
-                .peek(student -> System.out.println("after second filter result is "+student))
+                .peek(student -> System.out.println("after second filter result is " + student))
                 .forEach(System.out::println);
     }
 }

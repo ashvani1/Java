@@ -10,6 +10,7 @@ import java.util.Optional;
 
 public class StreamExample4 {
     static List<Student> students = Students.getAllStudents();
+
     static int performMultiplication(List<Integer> numbers) {
         /* first argument is initial value of result, then 2nd is BinaryOperator
         a = 1, b = 5 => result 5 is returned. for next time initial value will be 5
@@ -17,21 +18,20 @@ public class StreamExample4 {
         a = 10, b = 4 => 40
         a = 40, b = 3 => 120
         */
-        return numbers.stream().reduce(1, (a, b) -> a*b);
+        return numbers.stream().reduce(1, (a, b) -> a * b);
     }
 
     static Optional<Integer> performMultiplicationWithOutInitialValue(List<Integer> number) {
         //we don't need initial value here, it will multiply all elements are return.. returns Optional<T>
-        return number.stream().reduce((a, b) -> a*b);
+        return number.stream().reduce((a, b) -> a * b);
     }
 
     static Optional<Student> getHighestGPAStudent() {
         return students.stream().reduce(
                 (student1, student2) -> {
-                    if(student1.getGpa() > student2.getGpa()){
+                    if (student1.getGpa() > student2.getGpa()) {
                         return student1;
-                    }
-                    else {
+                    } else {
                         return student2;
                     }
                 }
@@ -39,10 +39,8 @@ public class StreamExample4 {
     }
 
 
-
-
     public static void main(String[] args) {
-        List<Integer> input = Arrays.asList(5,2,4,3);
+        List<Integer> input = Arrays.asList(5, 2, 4, 3);
         //System.out.println(performMultiplication(input));
 
         Optional<Integer> result = performMultiplicationWithOutInitialValue(new ArrayList<>());
