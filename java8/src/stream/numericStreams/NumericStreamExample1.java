@@ -27,6 +27,8 @@ public class NumericStreamExample1 {
 
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(1,2,3,4,5,6);
+        Integer a1 = numbers.stream().reduce(0, (a, b) -> a + b);
+        System.out.println("a1 is "+a1);
         System.out.println(sum(numbers));
         System.out.println(sum1(numbers).get());
         System.out.println(sumOfIntStream());

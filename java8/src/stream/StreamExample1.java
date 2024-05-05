@@ -12,7 +12,7 @@ public class StreamExample1 {
 
     public static void main(String[] args) {
         //Students name and activities in a map
-        Map<String, List<String>> studentWithActivities = students.stream().collect(Collectors.toMap(Student::getName, Student::getActivities));
+        //Map<String, List<String>> studentWithActivities = students.stream().collect(Collectors.toMap(Student::getName, Student::getActivities));
         /*Collectors.toMap() : Returns a Collector that accumulates elements into a Map whose keys and values are the
          result of applying the provided mapping functions to the input elements.. means toMap is taking 2 function.*/
 

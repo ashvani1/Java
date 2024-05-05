@@ -6,9 +6,6 @@ import java.util.*;
 import java.util.function.Consumer;
 
 public class ConsumerExample2 {
-    static Consumer<Student> consumer = (student) -> {
-        System.out.println(student.getName());
-    };
     static Consumer<Student> consumer1 = (student) -> {
         System.out.println(student.getName());
     };
@@ -22,7 +19,7 @@ public class ConsumerExample2 {
     public static void printStudentsName() {
 
         //foreach method accepts consumer implementation by default
-        Students.getAllStudents().forEach(consumer);
+        Students.getAllStudents().forEach(consumer1);
     }
 
     public static void printStudentNamesWithActivities() {
@@ -35,7 +32,7 @@ public class ConsumerExample2 {
                 .forEach(               //in actual forEach takes each element from list/stream and do operation on each
                 student -> {
                     if(student.getGradeLevel() > 2) {
-                        consumer.andThen(consumer2).accept(student);
+                        consumer1.andThen(consumer2).accept(student);
                     }
                 }
         );

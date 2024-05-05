@@ -4,7 +4,7 @@ public class Introduction {
     /*
     * A class can implements as many interfaces as we want
     * in our case we have Class CL and Interfaces as In1, In2 and In3 CL can implements all
-    * if In1 has a default method and In2 extends In1 and override default methods then on runtime it will be In2 method
+    * if In1 has a default method and In2 extends In1 and override default methods then at runtime it will be In2 method
     * if Class CL override same method on class then on runtime it will be method from class
     *
     *
