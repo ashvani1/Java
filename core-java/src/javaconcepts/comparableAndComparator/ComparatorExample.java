@@ -1,9 +1,6 @@
 package javaconcepts.comparableAndComparator;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ComparatorExample {
     public static void main(String[] args) {
@@ -20,10 +17,34 @@ public class ComparatorExample {
         countryList.add(country3);
 
         Collections.sort(countryList, new NewCountry());
+
+        System.out.println("sorted list");
         for (NewCountry country : countryList)
         {
             System.out.println(country.getName());
     }
+
+
+        //below will not work
+       /* var map = new TreeMap<>();
+        map.put(country1, "country1");
+        map.put(country2, "country2");
+        map.put(country3, "country3");
+        map.put(country4, "country4");
+
+        System.out.println("*****");
+        System.out.println(map);
+        System.out.println("*****");*/
+
+        var map = new TreeMap<NewCountry, String>(new NewCountry());
+        map.put(country1, "country1");
+        map.put(country2, "country2");
+        map.put(country3, "country3");
+        map.put(country4, "country4");
+
+        System.out.println("*****");
+        System.out.println(map);
+        System.out.println("*****");
 
     }
 }
@@ -66,3 +87,6 @@ class NewCountry implements Comparator<NewCountry> {
         }
     }
 }
+
+//class which is implementing Comparator, cant be added as a key of treemap,
+// but if we pass an object of comparator class then it will work

@@ -19,6 +19,12 @@ public class SortingExample1 {
         stringList.sort(Comparator.reverseOrder());
         System.out.println(stringList);
 
+        stringList.sort(Comparator.naturalOrder());
+        System.out.println(stringList);
+
+        stringList.sort(Comparator.comparing(String::toLowerCase));
+        System.out.println(stringList);
+
         //for primitive data
         int[] a = {2,1,3,5,3,5,10,7,5,3,1,0};
         Arrays.sort(a);

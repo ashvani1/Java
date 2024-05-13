@@ -6,6 +6,7 @@ import functionalInterfaces.data.Students;
 import java.util.List;
 import java.util.OptionalDouble;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class StreamExample13 {
     static List<Student> studentList = Students.getAllStudents();
@@ -29,5 +30,7 @@ public class StreamExample13 {
         OptionalDouble averageOfNoteBooks = studentList.stream().mapToInt(student -> student.getNoteBooks()).average();
         System.out.println(sumOfNoteBooks);
         averageOfNoteBooks.ifPresent(System.out :: println);
+
+        //IntStream has a sum() method but Stream doesn't have
     }
 }

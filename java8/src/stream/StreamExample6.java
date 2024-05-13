@@ -21,6 +21,12 @@ public class StreamExample6 {
         //return numbers.stream().max((x, y) -> x.compareTo(y)); similar
         return numbers.stream().min(Integer::compareTo);
     }
+
+    void findSum() {
+        int sum1 = numbers.stream().mapToInt(Integer::intValue).sum();
+        int sum2 = numbers.stream().reduce(0, (a,b) -> a+b);
+        int sum3 = numbers.stream().reduce(0, Integer :: sum);
+    }
     public static void main(String[] args) {
         System.out.println(findMaxUsingReduce());
         System.out.println(findMinUsingMaxOperator());
